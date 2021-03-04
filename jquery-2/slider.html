@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Custom Slider</title>
+        <script type="text/javascript" src="js/jQuery.js"></script>
+        <script type="text/javascript" src="js/cycle.js"></script>
+        <script type="text/javascript" src="js/slider.js"></script>
+        <style>
+            *{margin: 0; padding: 0; position: relative;}
+            #content{width: 600px; margin:auto}
+            .details{background-color: black; color: white; padding: 5px 5px 5px 15px; margin-top:-70px;opacity: 0.8;}
+            #slider{width: 600px; height:300px;overflow:hidden}
+            #play,#pause,#next,#prev{
+                background: black;
+                color: white;
+                height: 25px;
+                width: 25px;
+                line-height: 25px;
+                text-align: center;
+                border-radius: 25px;
+                border:1px solid white;
+                position: absolute;
+                z-index: 10;
+                cursor: pointer;
+            }
+            #play{top:10px;right: 20px;transform: rotate(90deg);}
+            #pause{top:10px;right: 50px;transform: rotate(90deg);}
+            #next{top:120px ;right:20px;}
+            #prev{top:120px ;left:20px;}
+            #pager{
+                position: absolute;
+                z-index: 10;
+                bottom: 50px;
+                left: 250px;
+             }
+             #pager a{
+                color: transparent; 
+                border: 1px solid white;
+                font-size: 0;
+                margin: 5px;
+                padding: 5px;
+                border-radius: 10px;
+             }
+             #pager a.activeSlide{
+                 background-color: tomato;
+             }
+        </style>
+    </head>
+    <body>
+        <div id="content">
+            <div id="play">&Delta;</div>
+            <div id="pause"> = </div>
+            <div id="next"> > </div>
+            <div id="prev"> < </div>
+            <div id="pager"></div>
+            
+            <div id="slider">
+                <div class="data">
+                    <div class="images">
+                        <img src="img/img1.jpg" alt="" width="600px" height="300px">
+                    </div>
+                    <div class="details">
+                        <h1>This is heading one</h1>
+                        <p>This is paragraph one</p>
+                    </div>
+                </div>
+                <div class="data">
+                    <div class="images">
+                        <img src="img/img2.jpg" alt="" width="600px" height="300px">
+                    </div>
+                    <div class="details">
+                        <h1>This is heading two</h1>
+                        <p>This is paragraph two</p>
+                    </div>
+                </div>
+                <div class="data">
+                    <div class="images">
+                        <img src="img/img3.jpg" alt="" width="600px" height="300px">
+                    </div>
+                    <div class="details">
+                        <h1>This is heading three</h1>
+                        <p>This is paragraph three</p>
+                    </div>
+                </div>
+                <div class="data">
+                    <div class="images">
+                        <img src="img/img4.jpg" alt="" width="600px" height="300px">
+                    </div>
+                    <div class="details">
+                        <h1>This is heading four</h1>
+                        <p>This is paragraph four</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

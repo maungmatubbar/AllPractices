@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JQuery Password Checker</title>
+        <script type="text/javascript" src="js/jQuery.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        <style>
+            #text,#pass,#checker {
+                float: left;
+            }
+            .weak{
+                background-color: red;
+                color: white;
+                width: 150px;
+                height: 20px;
+                text-align: center;
+                margin-left: 5px;
+            }
+            .good{
+                background-color: orange;
+                color: white;
+                width: 150px;
+                height: 20px;
+                text-align: center;
+                margin-left: 5px;
+            }
+            .strong{
+                background-color: green;
+                color: white;
+                width: 150px;
+                height: 20px;
+                text-align: center;
+                margin-left: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <span id="text"></span>
+            <input type="password" name="password" id="pass" placeholder="Enter Password">
+            <span id="checker"></span>
+        </div>
+        
+    </body>
+</html>
