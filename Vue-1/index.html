@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vue Practice</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    </head>
+    <body>
+
+        <div class="container"id="app">
+            <h3>Top 10 framworks</h3>
+            <!-- <ul class="list-group">
+                <li v-for="item in framworks" class="list-group-item">
+                    {{item}}
+                </li>
+            </ul> -->
+<!-- 
+            <ul class="list-group">
+                <li v-for="(framwork,index) of framworks" class="list-group-item">
+                    {{framwork}}
+                    <span class="badge bg-primary badge-pill">{{scores[index]}}</span>
+                </li>
+            </ul> -->
+            <table class="table table-border">
+                <tr>
+                    <th>Framwork</th>
+                    <th>Github</th>
+                    <th>Stackoverflow</th>
+                    <th>OverAll Score</th>
+                </tr>
+                <tr v-for="framwork in TopFramworks">
+                    <td>{{framwork.name}}</td>
+                    <td>{{framwork.github}}</td>
+                    <td>{{framwork.stack}}</td>
+                    <td>{{framwork.ovarall}}</td>
+                </tr>
+            </table>
+
+
+            <div v-if="showAlert" class="alert">Your Message</div>
+            <button class="btn btn-warning" v-on:click="showAlert=false">Hide Message</button>
+
+            <h1>List Rendering</h1>
+            <ul class="list-group">
+                <li v-for="(value,language) of topProgrammingLan" class="list-group-item d-flex justify-content-between">
+                    {{language}}
+                    <span class="badge bg-primary badge-pill">{{value}}</span>
+                </li>
+            </ul>
+        </div>
+        
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+        <script>
+            // new Vue({
+            //     el: "#app",
+            //     data:{
+            //         framworks:["Laravel","Yii","Lumen","Cake PHP"],
+            //         scores:[100,200,300,400]
+            //     },
+               
+            // });
+            new Vue({
+                el:"#app",
+                data:{
+                    TopFramworks:[
+                        {name:'Laravel',github:100,stack:50,ovarall:70},
+                        {name:'Yii',github:40,stack:30,ovarall:60},
+                        {name:'Codeigniter',github:60,stack:80,ovarall:80},
+                        {name:'Symphony',github:100,stack:50,ovarall:70},
+                        {name:'CakePHP',github:100,stack:50,ovarall:70},
+                        {name:'ZendFramwork',github:100,stack:50,ovarall:70},
+                        {name:'Phalcon',github:100,stack:50,ovarall:70}
+                    ],
+                    showAlert:true,
+                    topProgrammingLan:{
+                        'PHP':100,
+                        'C#':90,
+                        'Java':80,
+                        'Python':90,
+                        'Ruby':50,
+                        'Go':40,
+                        'C++':60
+                    }
+                    
+                }
+            });
+        </script>
+    </body>
+</html>
