@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Voting system</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <style>
+          #box{
+              min-width: 300px;
+              min-height: 300px;
+          }
+        </style>
+    </head>
+    <body>
+        
+        <div id="app">
+           <div class="container py-5">
+                <h3>Vote Your Favorite Programming Language.</h3>
+                <ul class="list-group">
+                    <li v-for="programming in programmingLanguage"  class="list-group-item d-flex justify-content-between">
+                        {{programming.name}}
+                        <button @click="programming.vote++" class="btn btn-outline-primary">
+                            <!-- v-on:click dui tai use kora jabe -->
+                            Upvote
+                            <span class="badge bg-primary">{{programming.vote}}</span>
+                        </button>
+                    </li>
+                </ul>
+
+                <h2>Mousemove and Method</h2>
+                <div id="box" @mousemove="getCoOrdinate" :class="{'bg-primary':!hoverd,'bg-info':hoverd}"  @mouseover="hoverd=true" @mouseout="hoverd=false">
+                    <!-- v-on:mousemove  -->
+                    <div class="col my-auto text-center">Mouse over here.</div>
+                </div>
+                <p class="lead text-center mt-3">
+                    <span class="badge bg-primary">X</span>{{ x }}
+                    <span class="badge bg-primary ml-2">Y</span>{{ y }}
+                </p>
+           </div>
+        </div>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+        <script>
+            new Vue({
+                el:"#app",
+                data:{
+                    programmingLanguage:[
+                        {name:'C++',vote:0},
+                        {name:'Java',vote:0},
+                        {name:'PHP',vote:0},
+                        {name:'Python',vote:0},
+                        {name:'GO',vote:0},
+                    ],
+                    x:0,
+                    y:0,
+                    hoverd:false,
+                },
+                methods:{
+                    getCoOrdinate(event){
+                        this.x = event.clientX;
+                        this.y = event.clientY;
+                    }
+                }
+
+            });
+           
+        </script>
+    </body>
+</html>
